@@ -40,7 +40,7 @@ class QuestionController extends Controller
         // Cara Lama!!!
         // $question = new Question;
         // $question->title = $request->title;
-        // $question->slug= $request->slug;
+        // $question->slug = $request->slug;
         // $question->save();
 
         // auth()->user()->question()->created($request->all());
@@ -79,7 +79,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        return response('Updated', Response::HTTP_ACCEPTED);
     }
 
     /**
