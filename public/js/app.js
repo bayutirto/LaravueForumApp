@@ -2318,6 +2318,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -37811,7 +37864,7 @@ var render = function() {
     "v-toolbar",
     { staticClass: "blue darken-2 white--text" },
     [
-      _c("v-toolbar-title", { staticClass: "mx-4" }, [_vm._v("Forum App")]),
+      _c("v-toolbar-title", { staticClass: "mx-4" }, [_vm._v("BayHub")]),
       _vm._v(" "),
       _c("v-spacer"),
       _vm._v(" "),
@@ -38275,7 +38328,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Forum")])
+  return _c(
+    "v-app",
+    { attrs: { id: "inspire" } },
+    [
+      _c(
+        "v-container",
+        { staticClass: "fill-height", attrs: { fluid: "" } },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs8: "" } },
+                [
+                  _c(
+                    "v-card",
+                    {
+                      staticClass: "mx-auto",
+                      attrs: { color: "#26c6da", dark: "", "max-width": "400" }
+                    },
+                    [
+                      _c(
+                        "v-card-title",
+                        [
+                          _c("v-icon", { attrs: { large: "", left: "" } }, [
+                            _vm._v(
+                              "\n                        mdi-alpha-b-box\n                    "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            { staticClass: "title font-weight-light" },
+                            [_vm._v("BayHub")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        { staticClass: "headline font-weight-bold" },
+                        [
+                          _vm._v(
+                            '\n                    "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."\n                    '
+                          ),
+                          _c("v-list-item-subtitle", [_vm._v("2 minutes ago")])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-list-item",
+                            { staticClass: "grow" },
+                            [
+                              _c(
+                                "v-list-item-avatar",
+                                { attrs: { color: "grey darken-3" } },
+                                [
+                                  _c("v-img", {
+                                    staticClass: "elevation-6",
+                                    attrs: {
+                                      src:
+                                        "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-list-item-content",
+                                [_c("v-list-item-title", [_vm._v("Evan You")])],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                { attrs: { align: "center", justify: "end" } },
+                                [
+                                  _c("v-icon", { staticClass: "mr-1" }, [
+                                    _vm._v("mdi-heart")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "subheading mr-2" },
+                                    [_vm._v("256")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v("\n\n            Sidebar\n        ")
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

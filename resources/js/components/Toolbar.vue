@@ -1,7 +1,7 @@
 <template>
      <v-toolbar class="blue darken-2 white--text">
 
-        <v-toolbar-title class="mx-4">Forum App</v-toolbar-title>
+        <v-toolbar-title class="mx-4">BayHub</v-toolbar-title>
 
         <v-spacer></v-spacer>
 
