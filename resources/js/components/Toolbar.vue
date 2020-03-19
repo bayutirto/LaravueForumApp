@@ -7,20 +7,12 @@
 
         <div class="hidden-sm-and-down">
 
-        <router-link to="/forum">
-          <v-btn tile text class="ma-2 white--text"><span>Forum</span></v-btn>
-        </router-link>
-
-        <router-link to="/question">
-          <v-btn tile text class="ma-2 white--text"><span>Question</span></v-btn>
-        </router-link>
-
-        <router-link to="/category">
-          <v-btn tile text class="ma-2 white--text"><span>Category</span></v-btn>
-        </router-link>
-
-        <router-link to="/login">
-          <v-btn tile class="ma-2 white--text" outlined color="white"><span>Login</span></v-btn>
+        <router-link
+        v-for="item in items"
+        :key="item.title"
+        :to="item.to"
+        >
+          <v-btn v-if="item.show" text tile class="ma-2 blue darken-2 white--text"><span>{{item.title}}</span></v-btn>
         </router-link>
 
         </div>
@@ -31,6 +23,22 @@
 
 <script>
 export default {
+    data(){
+        return {
+            items:[
+                {title : 'Forum', to:'/forum', show: true},
+                {title : 'Question', to:'/question', show: User.loggedIn()},
+                {title : 'Category', to:'/category', show: User.loggedIn()},
+                {title : 'Login', to:'/login', show: !User.loggedIn()},
+                {title : 'Logout', to:'/logout', show: User.loggedIn()},
+            ]
+        }
+    },
+    created(){
+        EventBus.$on('logout', () =>  {
+            User.logout()
+        })
+    }
 
 }
 </script>

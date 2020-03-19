@@ -46,7 +46,11 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer />
+                <router-link to="/signup">
+                    <v-btn tile text class="ma-2">Sign Up</v-btn>
+                </router-link>
                 <v-btn tile color="blue darken-2 white--text" type="submit">Login</v-btn>
+
               </v-card-actions>
             </v-card>
           </v-form>
@@ -65,6 +69,11 @@ export default {
                 email:null,
                 password:null
             }
+        }
+    },
+    created(){
+        if(User.loggedIn()){
+            this.$router.push({name: 'forum'})
         }
     },
     methods: {
