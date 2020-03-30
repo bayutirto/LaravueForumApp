@@ -39,7 +39,7 @@
                   <v-text-field
                     label="Email"
                     v-model="form.email"
-                    prepend-icon="mdi-account"
+                    prepend-icon="mdi-email"
                     type="email"
                     :error-messages="errors.email"
                     required

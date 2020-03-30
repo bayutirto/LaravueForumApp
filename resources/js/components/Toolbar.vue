@@ -1,7 +1,11 @@
 <template>
      <v-toolbar class="blue darken-2 white--text">
 
-        <v-toolbar-title class="mx-4">BayHub</v-toolbar-title>
+        <v-app-bar-nav-icon>
+            <v-icon large color="blue lighten-4 mx-auto">mdi-alpha-b-box</v-icon>
+        </v-app-bar-nav-icon>
+
+        <v-toolbar-title>BayHub</v-toolbar-title>
 
         <v-spacer></v-spacer>
 
@@ -27,7 +31,7 @@ export default {
         return {
             items:[
                 {title : 'Forum', to:'/forum', show: true},
-                {title : 'Question', to:'/question', show: User.loggedIn()},
+                {title : 'Question', to:'/ask-question', show: User.loggedIn()},
                 {title : 'Category', to:'/category', show: User.loggedIn()},
                 {title : 'Login', to:'/login', show: !User.loggedIn()},
                 {title : 'Logout', to:'/logout', show: User.loggedIn()},

@@ -29,8 +29,9 @@
                   <v-text-field
                     label="Email"
                     v-model="form.email"
-                    prepend-icon="mdi-account"
+                    prepend-icon="mdi-email"
                     type="email"
+                    :error-messages="errors.email"
                     required
                   />
 
@@ -40,6 +41,7 @@
                     v-model="form.password"
                     prepend-icon="mdi-lock"
                     type="password"
+                    :error-messages="errors.password"
                     required
                   />
 
@@ -68,7 +70,8 @@ export default {
             form :{
                 email:null,
                 password:null
-            }
+            },
+            errors:{}
         }
     },
     created(){
