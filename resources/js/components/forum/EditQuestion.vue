@@ -1,10 +1,10 @@
 <template>
     <v-app id="inspire">
         <v-container fluid>
-            <v-form @submit.prevent="create">
+            <v-form @submit.prevent="update">
                 <v-layout row wrap>
                     <v-flex md8>
-                    <h2 class="title mx-12 my-9 grey--text">Ask a question</h2>
+                    <h2 class="title mx-12 my-9 grey--text">Edit your question</h2>
                     <v-card
                         class="mx-12 mb-12"
                         max-width="1000"
@@ -23,7 +23,7 @@
                                 required
                             ></v-text-field>
 
-                            <p><span class="font-weight-bold"> Category</span>
+                            <!-- <p><span class="font-weight-bold"> Category</span>
                             <br> Select a category to specify your question
                             </p>
                             <v-select
@@ -34,7 +34,7 @@
                                 outlined
                                 v-model="form.category_id"
                                 autocomplete
-                            ></v-select>
+                            ></v-select> -->
 
                             <p><span class="font-weight-bold"> Body</span>
                             <br> Include all the information someone would need to answer your question
@@ -51,7 +51,17 @@
                             dark
                             type="submit"
                         >
-                            Review your question
+                            Save
+                        </v-btn>
+                        <v-btn
+                            tile
+                            color="blue darken-1"
+                            class="ma-2"
+                            dark
+                            type="submit"
+                            @click="cancel"
+                        >
+                            Cancel
                         </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -67,28 +77,26 @@
 
 <script>
 export default {
+    props:['data'],
     data(){
         return {
-            form :{
-                title:null,
-                category_id:null,
-                body:null
-            },
-            categories:{},
-            errors:{},
+            form: {
+                title : null,
+                body : null
+            }
+        }
+    },
+    methods:{
+        cancel(){
+            EventBus.$emit('cancelEditing')
+        },
+        update(){
+            axios.patch(`/api/question/${this.form.slug}`,this.form)
+            .then(res =>this.cancel())
         }
     },
     created(){
-        axios.get('/api/category')
-        .then(res => this.categories = res.data.data)
-
-    },
-    methods:{
-        create(){
-            axios.post('api/question',this.form)
-            .then(res => this.$router.push(res.data.path))
-            .catch(error => this.errors = error.response.data.error)
-        }
+        this.form = this.data
     }
 
 }

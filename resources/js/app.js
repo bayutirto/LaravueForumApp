@@ -9,9 +9,12 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vue from 'vue'
-import Vuetify from 'vuetify'
 
+import Vuetify from 'vuetify'
 Vue.use(Vuetify)
+
+import VueSimplemde from 'vue-simplemde'
+Vue.component('vue-simplemde', VueSimplemde)
 
 import User from './helpers/User'
 window.User = User
@@ -44,5 +47,5 @@ import router from './router/router'
 const app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    router,
+    router
 });

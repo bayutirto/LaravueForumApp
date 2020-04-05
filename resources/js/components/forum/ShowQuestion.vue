@@ -25,6 +25,15 @@
                         <p class="body-1">
                             {{data.body}}
                         </p>
+                    <br>
+                        <v-card-actions v-if="own">
+                            <v-btn icon color="orange" @click="edit">
+                                <v-icon>mdi-pencil</v-icon>
+                            </v-btn>
+                            <v-btn icon color="red" @click="destroy">
+                                <v-icon>mdi-delete</v-icon>
+                            </v-btn>
+                        </v-card-actions>
                     </div>
                 </v-col>
             </v-row>
@@ -71,7 +80,27 @@
 
 <script>
 export default {
-    props:['data']
+    props:['data'],
+    data(){
+        return {
+            own : User.own(this.data.user_id)
+        }
+    },
+    computed: {
+        body(){
+            return this.data.body
+        }
+    },
+    methods: {
+        destroy(){
+            axios.delete(`/api/question/${this.data.slug}`)
+            .then(res => this.$router.push('/forum'))
+            .catch(error => console.log(error.response.data))
+        },
+        edit(){
+            EventBus.$emit('startEditing')
+        }
+    }
 }
 </script>
 
